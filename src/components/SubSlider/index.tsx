@@ -10,10 +10,8 @@ type Props = {
   sliderValue: number;
 };
 export const SubSlider: FC<Props> = ({ sliderValue }) => {
-  // const [valueSubSlider, setValueSubSlider] = useState(0);
   const [prevBtn, setPrevBtn] = useState(0);
 
-  const handleClick = () => {};
   const slides = store[sliderValue].block.map((item, index) => {
     return (
       <div className={styles.slide}>
@@ -22,6 +20,7 @@ export const SubSlider: FC<Props> = ({ sliderValue }) => {
       </div>
     );
   });
+
   return (
     <div className={styles.container}>
       <Swiper
@@ -36,7 +35,6 @@ export const SubSlider: FC<Props> = ({ sliderValue }) => {
           </SwiperSlide>
         ))}
         {prevBtn > 0 ? <PrevSlideButton setPrevBtn={setPrevBtn} /> : ""}
-        {/* <PrevSlideButton /> */}
         {prevBtn < slides.length - 3 ? (
           <NextSlideButton setPrevBtn={setPrevBtn} />
         ) : (

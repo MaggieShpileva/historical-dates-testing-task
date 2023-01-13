@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import React, {
   FC,
   ReactElement,
@@ -11,10 +9,7 @@ import React, {
 } from "react";
 import styles from "./index.module.scss";
 import { store } from "../../store/store";
-import { hover } from "@testing-library/user-event/dist/hover";
 import { Dot } from "../Dot";
-import { useLayoutEffect } from "react";
-import { gsap } from "gsap";
 
 type item = { x: number; y: number };
 type ArrPoints = item[];
@@ -22,6 +17,7 @@ type Props = {
   sliderValue: number;
   setSliderValue: (value: SetStateAction<number>) => void;
 };
+
 export const Circle: FC<Props> = ({ sliderValue, setSliderValue }) => {
   let arrayLength = store.length;
   let arrPoints: ArrPoints = [];
@@ -30,7 +26,7 @@ export const Circle: FC<Props> = ({ sliderValue, setSliderValue }) => {
   const circleRef = useRef();
   const ctx = useRef();
   const [mouseEnterToDot, setMouseEnterToDot] = useState(false);
-  const [subDot, setSubDot] = useState();
+  const [subDot, setSubDot] = useState<number>();
   const [isSubDot, SetIsSubDot] = useState(false);
 
   for (let i = 0; i < arrayLength; i++) {
@@ -42,8 +38,6 @@ export const Circle: FC<Props> = ({ sliderValue, setSliderValue }) => {
     item.y = (530 / 2) * Math.cos(angle) + 265 - 30;
     angle += delta;
   });
-
-  const [rotate, setRotate] = useState(160);
 
   const handleClick = (index: number) => {
     setSliderValue(index);
@@ -57,6 +51,7 @@ export const Circle: FC<Props> = ({ sliderValue, setSliderValue }) => {
     setSubDot(index);
     SetIsSubDot(true);
   };
+
   const renderDots = () => {
     return arrPoints.map((item, index) => {
       const mystyle = {
