@@ -1,0 +1,36 @@
+.container {
+  width: 500px;
+  margin-top: 70px;
+  .title {
+    position: relative;
+    width: 358px;
+    height: 134px;
+    text-align: left;
+    margin-left: 78px;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 120px;
+      width: 5px;
+      top: 5px;
+      left: -78px;
+      background: linear-gradient(#3877ee, #ef5da8);
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 123px;
+    height: 48px;
+  }
+  .title {
+    width: 123px !important;
+    height: 48px !important;
+    margin-left: 0 !important;
+  }
+  h1 {
+  }
+  .title::before {
+    display: none;
+  }
+}

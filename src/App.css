@@ -1,5 +1,41 @@
+body {
+  font-family: "PT Sans", sans-serif;
+}
+
+h1 {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 120%;
+  color: #42567a;
+}
+
+h5 {
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  text-transform: uppercase;
+  color: #3877ee;
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #42567a;
+}
+
 .App {
   text-align: center;
+  width: 1440px;
+  height: 1080px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .App-logo {
@@ -34,5 +70,26 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .App {
+    width: 300px;
+    padding-left: 20px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 56px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  h5 {
+    font-size: 16px;
   }
 }

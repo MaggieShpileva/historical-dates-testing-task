@@ -1,0 +1,58 @@
+.container {
+  width: 120px;
+  height: 88px;
+  position: relative;
+  .swiper_slide {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+    color: #42567a;
+  }
+}
+.button_right,
+.button_left {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(66, 86, 122, 0.5);
+  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+}
+
+.button_left {
+  transform: rotate(180deg);
+  margin-left: 0px;
+  margin-right: 20px;
+}
+@media screen and (max-width: 320px) {
+  .container {
+    top: 505px;
+  }
+  .swiper_slide {
+    height: 20px;
+  }
+  .swiper {
+    width: 70px;
+    margin-left: 0;
+  }
+  p {
+    margin: 0;
+  }
+  .button_left,
+  .button_right {
+    width: 25px;
+    height: 25px;
+  }
+  .button_left {
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: -12px;
+  }
+  img {
+    width: 3.12px;
+    height: 6.25px;
+  }
+}
